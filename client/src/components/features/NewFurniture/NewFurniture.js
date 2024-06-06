@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import { clsx } from 'clsx';
-// import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBox';
 import PanelBar from '../../layout/PanelBar/PanelBar';
 import PanelMenu from '../../layout/PanelMenu/PanelMenu';
 // import { getItemsOnPage } from '../../../utils/viewMode';
@@ -111,8 +111,7 @@ class NewFurniture extends React.Component {
                       styles.colXXSmall
                     )}
                   >
-                    ITEM
-                    {/* <ProductBox {...item} /> */}
+                    <ProductBox {...item} />
                   </div>
                 ))}
             </div>
