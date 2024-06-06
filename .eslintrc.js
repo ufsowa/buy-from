@@ -9,6 +9,8 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
+    "@babel/plugin-transform-private-property-in-object",
+    "next/core-web-vitals",
   ],
   root: true,
   env: {

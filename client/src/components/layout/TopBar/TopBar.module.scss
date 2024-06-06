@@ -1,0 +1,63 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  background-color: $header-topbar-bg;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      line-height: 55px;
+
+      a {
+        color: $header-topbar-text;
+        font-size: 13px;
+
+        &:hover {
+          color: $header-topbar-primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .topOptions ul li {
+    margin-right: 1.5rem;
+
+    .icon {
+      margin-left: 5px;
+    }
+  }
+
+  .topMenu ul li {
+    margin-left: 1.5rem;
+
+    .icon {
+      margin-right: 5px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    .login {
+      span {
+        display: none;
+      }
+    }
+    .register {
+      span {
+        display: none;
+      }
+    }
+    .topOptions {
+      flex: 0 0 60%;
+      ul li {
+        margin-right: 0.8rem;
+      }
+    }
+  }
+}

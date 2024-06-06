@@ -1,0 +1,106 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  display: block;
+  border: 1px solid $feature-border;
+  text-align: center;
+  margin-top: 40px;
+  text-decoration: none;
+
+  &:hover {
+    @extend .active;
+    @extend %hover-effects;
+    box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
+    text-decoration: none;
+    background-color: #ffffff;
+
+    .iconWrapper {
+      &::before {
+        box-shadow: 0 0 12px rgba(33, 33, 33, 0.2);
+      }
+    }
+  }
+
+  .iconWrapper {
+    height: 60px;
+    transform: translateY(-50%);
+    color: $feature-text-primary;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      position: relative;
+      z-index: 9;
+    }
+
+    &::before {
+      content: "";
+      border: 1px solid $feature-border;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 76px;
+      height: 76px;
+      border-radius: 100%;
+      background-color: $feature-bg;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid $feature-border;
+    }
+  }
+
+  .content {
+    text-transform: uppercase;
+    color: $feature-text-primary;
+    margin-top: -0.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+
+    h5 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    p {
+    }
+  }
+
+  &.active {
+    .iconWrapper {
+      color: $feature-active-text;
+
+      &::after {
+        background-color: $feature-active-bg;
+        border-color:$feature-active-bg;
+      }
+    }
+
+    .content {
+      color: $feature-content;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .root {
+    height: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+    height: 134px;
+  }
+}

@@ -1,0 +1,133 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  box-shadow: 2px 3.464px 6px $blackLowOpacity;
+  background-color: $header-menubar-bg;
+
+  :global(.container)> :global(.row) {
+    height: 100px;
+  }
+
+  .menu {
+    display: flex;
+    align-self: stretch;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        list-style: none;
+        display: flex;
+        align-items: stretch;
+        @extend %hover-effects;
+      }
+    }
+
+    a {
+      color: $header-menubar-text;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 1rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      border-top: 4px solid $header-menubar-border;
+      font-weight: 500;
+      letter-spacing: 1px;
+
+      &:hover,
+      &.active {
+        background-color: $header-menubar-active-bg;
+        color: $header-menubar-active-text;
+        border-color: $header-menubar-active-bg;
+      }
+
+      &.active {
+        border-color: $header-menubar-text;
+      }
+    }
+  }
+
+  .mobileMenu {
+    visibility: hidden;
+  }
+
+  .option {
+    &:hover {
+      background-color: $button-hover-bg;
+      color: $button-text;
+    }
+
+    &.active {
+      background-color: $button-hover-bg;
+      color: $button-text;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+
+    .topPanel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .searchPanel {
+        order: 1;
+      }
+    }
+
+    .menu {
+      order: 2;
+    }
+  }
+
+  .menuToggle::after {
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    align-items: center;
+
+    .mobileMenu {
+      visibility: visible;
+    }
+
+    .menuToggle {
+      background-color: $mobile-menuBar-menu-bg;
+      color: $button-text;
+      padding-right: 0;
+    }
+
+    .menu {
+      visibility: hidden;
+      position: absolute;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .container > .row {
+    height: 120px;
+  }
+
+  .topPanel {
+    width: 80%;
+  }
+  .searchPanel {
+    width: 20%;
+  }
+}
